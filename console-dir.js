@@ -1,5 +1,5 @@
 //
-// @file console.dir.js
+// @file console-dir.js
 // @brief
 // @author ongaeshi
 // @date   2011/06/02
