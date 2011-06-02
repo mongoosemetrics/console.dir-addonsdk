@@ -2,6 +2,17 @@
 // @brief
 // @author ongaeshi
 // @date   2011/06/02
+//
+// require('console-dir.js');
+//
+// console.dir({a: 1, b: 2, c: 3});
+// => 
+// info:
+//   a: 1
+//   b: 2
+//   c: 3
+//
+//
 
 console.dir = function (object) {
   var pairs = [];
