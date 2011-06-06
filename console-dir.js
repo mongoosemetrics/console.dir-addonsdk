@@ -1,4 +1,3 @@
-//
 // @file console-dir.js
 // @brief
 // @author ongaeshi
@@ -11,6 +10,64 @@
 //   a: 1
 //   b: 2
 //   c: 3
+//
+//
+// --------------------------------------
+// console.dir_s({a: 1, b: 2, c: 3});
+//     => "info:\n   a: 1\n   b: 2\n   c: 3"
+// 
+// --------------------------------------
+// console.dir({f1: function() {}, f2: function() {}, f3: function() {}}, "Disp functions.");
+// => 
+// info: 
+// Disp functions.
+//   f1()
+//   f2()
+//   f3()
+//
+// --------------------------------------
+// console.dir({f1: function() {}, a : 1, b : 2, funcs: function() {}}, "property & function");
+// => 
+// info: 
+// property & function
+//   property:
+//     a: 1
+//     b: 2
+//   function:
+//     f1()
+//     funcs()
+//
+// --------------------------------------
+// const panel = require('panel');
+// console.dir(panel.Panel({
+//   width: 800,
+//   height: 800,
+//   contentURL: data.url('index.html'),
+//   contentScriptFile: [data.url('game.js')],
+//   contentScriptWhen: 'ready'
+// }));
+// => 
+// info:
+//   property:
+//     allow: [object Object]
+//     contentScript: null
+//     contentScriptFile: resource://jid1-ckmgqls2uqipog-enchant-test-data/game.js
+//     contentScriptWhen: "ready"
+//     contentURL: "resource://jid1-ckmgqls2uqipog-enchant-test-data/index.html"
+//     height: 800
+//     isShowing: false
+//     port: [object Trait]
+//     width: 800
+//   function:
+//     destroy()
+//     hide()
+//     on()
+//     once()
+//     postMessage()
+//     removeListener()
+//     resize()
+//     show()
+//
 // --------------------------------------
 
 console.dir_s = function (object, msg) {
@@ -45,8 +102,7 @@ console.dir_s = function (object, msg) {
   var properties = [];
   var funcs = [];
   
-  for (var i = 0; i < pairs.length; ++i)
-  {
+  for (var i = 0; i < pairs.length; ++i) {
     switch (typeof pairs[i][1]) {
     case "function":
       funcs.push(pairs[i]);
