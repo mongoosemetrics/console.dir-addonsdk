@@ -4,5 +4,5 @@
 	"description": "console.dir support for Mozilla Firefox Add-on SDK (forked from https://gist.github.com/1002838)",
 	"author": "ongaeshi",
 	"version": "1002838",
-	"private": false,
+	"private": false
 }
